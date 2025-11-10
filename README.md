@@ -50,28 +50,6 @@ This document outlines the structured input/output signatures and their associat
 | **Outputs** | | | | |
 | `reply` | `str` | The assistant's response to the user following the language policy and reply rules | Reply | |
 
-
-guardrails can be found below: 
-```
-lets also add this inputs that are alwasy constnat: 
-guardrails: 
-guardrails:
-  language:
-    disallowed: ["Russian"]
-    action_on_violation: "Refuse briefly; invite discussion in English (or the user's non-Russian language)."
-  scope:
-    allowed: "Only discuss company info within documented knowledge."
-    disallowed_examples:
-      - "Sensitive or confidential information."
-      - "Speculation beyond provided company_info."
-      - "Topics unrelated to the company/business."
-  refusal:
-    style: "Brief, polite, friendly; redirect to company topics."
-    default_message: "I can’t answer that. Let’s keep it about the company (in English). How can I help you learn more about our services?"
-  enforcement:
-    - "If out-of-scope or sensitive: refuse using the default message."
-    - "If the user writes in Russian or requests Russian: refuse and suggest continuing in English."
-```
 ---
 
 ### 🧠 `complexity` Signature (Query Complexity Analysis)
